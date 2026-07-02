@@ -1,0 +1,20 @@
+//Leetcode 977  :  Squares Of Sorted Arry
+class Solution {
+    public int[] sortedSquares(int[] nums) {
+        int i=0,j=nums.length-1,k=j;
+        while(i<=j){
+            int l = nums[i]*nums[i];
+            int r = nums[j]*nums[j];
+            if(l>=r){
+                nums[k]=l;
+                i++;
+            }
+            else{
+                nums[k]=r;
+                j--;
+            }
+            k--;
+        }
+        return nums;
+    }
+}
